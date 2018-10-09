@@ -1,20 +1,125 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<section class="content-header-app">
+  <mat-toolbar class="header-app-template">
+    <div class="left">
+        <i class="material-icons poiner-menu" (click)="drawer.toggle()">menu</i>
+      <div class="app-name" *ngIf="drawer.opened==false">
+        <img class="img-template-empresa rounded-circle margin-app-name-icon" src="https://paginawebmedia.com/wp-content/uploads/2015/09/logo-icon.png">
+        <span>My Application</span>
+      </div>
+      
+    </div>
+    <div class="right">
+      <div class="item">
+        <mat-icon>notification_important</mat-icon>
+      </div>
+      <div class="item item-log-out">
+        <img class="img-avatar-template  rounded-circle" src="https://static1.squarespace.com/static/59b46fcb197aea58a804a8f9/t/5ab1336f758d4671e7ec2c9f/1521562517177/DSC_1095.JPG">
 
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>settings_power</mat-icon>
+
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <i class="fa fa-id-card" aria-hidden="true"></i>
+            <span>PerFil</span>
+          </button>
+          <button mat-menu-item>
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <span>Log Out</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+
+  </mat-toolbar>
+</section>
+<section class="content-app-all">
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-toolbar class="header-app-template-name ">
+        <img class="img-template-empresa rounded-circle" src="https://paginawebmedia.com/wp-content/uploads/2015/09/logo-icon.png">
+        <span>My Application</span>
+      </mat-toolbar>
+      <!--user details-->
+      <div class="header-detail-user">
+        <div class="avatar">
+          <img class="img-avatar-template rounded-circle" src="https://static1.squarespace.com/static/59b46fcb197aea58a804a8f9/t/5ab1336f758d4671e7ec2c9f/1521562517177/DSC_1095.JPG">
+        </div>
+        <div class="content mx-auto">
+          <span class="font-small">Alex Fabian Yungan </span>
+          <span class="font-x-small">Administrador</span>
+        </div>
+      </div>
+      <!--End user details-->
+      <!-- Side Navbar -->
+      <nav class="side-navbar">
+        <div class="side-navbar-wrapper">
+          <!-- Sidebar Header    -->
+          <div class="admin-menu">
+            <h5 class="sidenav-heading">Main</h5>
+            <ul id="side-admin-menu" class="side-menu list-unstyled">
+              <li> <a href="#"> <i class="icon-screen"> </i>Demo</a></li>
+            </ul>
+          </div>
+          <!-- End Sidebar Header    -->
+          <!-- Sidebar Navigation Menus-->
+          <div class="main-menu">
+            <h5 class="sidenav-heading">Main</h5>
+            <ul id="side-main-menu" class="side-menu list-unstyled">
+              <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+              <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
+                  dropdown </a>
+                <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                  <li><a href="#">Page</a></li>
+                  <li><a href="#">Page</a></li>
+                  <li><a href="#">Page</a></li>
+                </ul>
+              </li>
+              <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
+                  dropdown </a>
+                <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
+                  <li><a href="#">Page</a></li>
+                  <li><a href="#">Page</a></li>
+                  <li><a href="#">Page</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--End Sidebar Navigation Menus-->
+        </div>
+      </nav>
+      <!--End Side Navbar -->
+
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+
+      <div class="content-data-all">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          Toggle sidenav
+        </button>
+        <mat-card>1Simple card</mat-card>
+        <mat-card>2Simple card</mat-card>
+        <mat-card>3Simple card</mat-card>
+        <mat-card>4Simple card</mat-card>
+        <mat-card>5Simple card</mat-card>
+        <mat-card>6Simple card</mat-card>
+        <mat-card>7Simple card</mat-card>
+        <mat-card>8Simple card</mat-card>
+        <mat-card>9Simple card</mat-card>
+        <mat-card>10Simple card</mat-card>
+        <mat-card>11Simple card</mat-card>
+        <mat-card>12Simple card</mat-card>
+        <mat-card>13Simple card</mat-card>
+        <mat-card>14Simple card</mat-card>
+        <mat-card>15Simple card</mat-card>
+      </div>
+
+    </div>
+
+  </mat-drawer-container>
+</section>
+<footer>
+  <span>Creado Por Alex Yungan</span>
+</footer>
