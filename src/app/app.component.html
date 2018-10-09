@@ -1,6 +1,7 @@
 <section class="content-header-app">
   <mat-toolbar class="header-app-template">
     <div class="left">
+        <i class="material-icons poiner-menu" (click)="drawer.toggle()" *ngIf="drawer.opened==true">chevron_left</i>
         <i class="material-icons poiner-menu" (click)="drawer.toggle()">menu</i>
       <div class="app-name" *ngIf="drawer.opened==false">
         <img class="img-template-empresa rounded-circle margin-app-name-icon" src="https://paginawebmedia.com/wp-content/uploads/2015/09/logo-icon.png">
