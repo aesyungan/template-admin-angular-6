@@ -1,13 +1,14 @@
+<section class="header-disable" *ngIf="drawer.opened==true" (click)="drawer.toggle()"></section>
 <section class="content-header-app">
   <mat-toolbar class="header-app-template">
     <div class="left">
-        <i class="material-icons poiner-menu" (click)="drawer.toggle()" *ngIf="drawer.opened==true">chevron_left</i>
-        <i class="material-icons poiner-menu" (click)="drawer.toggle()">menu</i>
+      <i class="material-icons poiner-menu" (click)="drawer.toggle()" *ngIf="drawer.opened==true">chevron_left</i>
+      <i class="material-icons poiner-menu" (click)="drawer.toggle()">menu</i>
       <div class="app-name" *ngIf="drawer.opened==false">
-        <img class="img-template-empresa rounded-circle margin-app-name-icon" src="https://paginawebmedia.com/wp-content/uploads/2015/09/logo-icon.png">
-        <span>My Application</span>
+        <img class="img-template-empresa rounded-circle margin-app-name-icon " src="https://paginawebmedia.com/wp-content/uploads/2015/09/logo-icon.png">
+        <span class="name">My Application</span>
       </div>
-      
+
     </div>
     <div class="right">
       <div class="item">
@@ -38,10 +39,10 @@
 <section class="content-app-all">
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <mat-toolbar class="header-app-template-name ">
-        <img class="img-template-empresa rounded-circle" src="https://paginawebmedia.com/wp-content/uploads/2015/09/logo-icon.png">
+      <div class="header-app-template-name ">
+        <img class="img-template-empresa-slider-bar rounded-circle" src="https://paginawebmedia.com/wp-content/uploads/2015/09/logo-icon.png">
         <span>My Application</span>
-      </mat-toolbar>
+      </div>
       <!--user details-->
       <div class="header-detail-user">
         <div class="avatar">
@@ -49,40 +50,37 @@
         </div>
         <div class="content mx-auto">
           <span class="font-small">Alex Fabian Yungan </span>
-          <span class="font-x-small">Administrador</span>
+          <span class="font-x-small">Administrador<i class="fa fa-toggle-on green" aria-hidden="true"></i></span>
         </div>
       </div>
+
       <!--End user details-->
       <!-- Side Navbar -->
       <nav class="side-navbar">
         <div class="side-navbar-wrapper">
           <!-- Sidebar Header    -->
           <div class="admin-menu">
-            <h5 class="sidenav-heading">Main</h5>
+            <h5 class="sidenav-heading">Home</h5>
             <ul id="side-admin-menu" class="side-menu list-unstyled">
-              <li> <a href="#"> <i class="icon-screen"> </i>Demo</a></li>
+              <li class="item-link active-link" (click)="drawer.toggle()"> <a href="#">
+                  <mat-icon>dashboard</mat-icon>Dashboard
+                </a></li>
             </ul>
           </div>
           <!-- End Sidebar Header    -->
           <!-- Sidebar Navigation Menus-->
           <div class="main-menu">
-            <h5 class="sidenav-heading">Main</h5>
+            <h5 class="sidenav-heading">MODULOS</h5>
             <ul id="side-main-menu" class="side-menu list-unstyled">
-              <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
-              <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
-                  dropdown </a>
-                <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                  <li><a href="#">Page</a></li>
-                  <li><a href="#">Page</a></li>
-                  <li><a href="#">Page</a></li>
-                </ul>
-              </li>
-              <li><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example
-                  dropdown </a>
+              <li class="item-link"><a href="#"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+
+              <li class="item-link"><a href="#exampledropdownDropdown2" aria-expanded="false" data-toggle="collapse">
+                  <i class="fa fa-user" aria-hidden="true"></i>Example
+                  Ventas </a>
                 <ul id="exampledropdownDropdown2" class="collapse list-unstyled ">
-                  <li><a href="#">Page</a></li>
-                  <li><a href="#">Page</a></li>
-                  <li><a href="#">Page</a></li>
+                  <li (click)="drawer.toggle()"><a href="#">Facturas</a></li>
+                  <li (click)="drawer.toggle()"><a href="#">Compras</a></li>
+                  <li (click)="drawer.toggle()"><a href="#">Inventario</a></li>
                 </ul>
               </li>
             </ul>
